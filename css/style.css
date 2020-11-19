@@ -40,23 +40,21 @@ header{
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 60px;
-    animation-name: animationtest;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-delay: 3s;
-    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1 );
 }
 .heading-primary__main{
   display: block;
     font-size: 62px;
     font-weight: 400;
     letter-spacing: 15px;
+
+    animation: moveInLeft 2s ease-out;
 }
 .heading-primary__sub{
     display: block;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 18px;
+    animation: moveInRight 2s ease-out;
 }
 .btn,
 .btn:link,
@@ -100,19 +98,50 @@ header{
 }
 .btn:hover::after{
     transform: scaleX(3.4) scaleY(3.6);
-     opacity: 0.7;
+     opacity: 0;
 }
-@keyframes animationtest {
-    0%{
+.btn-animated{
+    animation: moveInBottom .5s ease-in-out .75s;
+    animation-fill-mode: backwards;
+}
+@keyframes moveInLeft {
+    0% {
         opacity: 0;
-        transform: translate(0, -100px);
-    }
-    80%{
-        transform: translate(0, -20px);
-    }
-    100%{
-        opacity: 1;
-        transform: translate(0,0);
+        transform: translateX(-100px);
     }
 
+    80% {
+        transform: translateX(10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
