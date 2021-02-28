@@ -1,6 +1,7 @@
+@import "../../sass/Abstract/variables";
 .header {
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)),
-  url('../../img/background1.jpg');
+  url('../../../SassHowKteamLearn/img/background1.jpg');
   background-size: cover;
   background-position: top;
   position: relative;
